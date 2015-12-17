@@ -1,6 +1,6 @@
 # Basics
 
-FROM centos:latest
+FROM ubuntu:latest
 maintainer Artem Dekhtyar
 run apt-get update
 run apt-get install -q -y git-core
