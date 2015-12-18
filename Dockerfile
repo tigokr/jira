@@ -13,6 +13,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-add-repository ppa:webupd8team/java -y
 RUN apt-get update
 RUN echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections
 RUN DEBIAN_FRONTEND=noninteractive apt-get install oracle-java8-installer -y
+RUN DEBIAN_FRONTEND=noninteractive apt-get install libmysql-java
 
 # Install JIRA
 
@@ -23,6 +24,7 @@ RUN mkdir -p /opt/jira
 RUN tar zxf /root/jira.tar.gz --strip=1 -C /opt/jira
 RUN mkdir -p /opt/jira-home
 RUN echo "jira.home = /opt/jira-home" > /opt/jira/atlassian-jira/WEB-INF/classes/jira-application.properties
+RUN echo "CLASSPATH=\".:/usr/share/java/mysql.jar\"" > /etc/environment
 
 # Launching Jira
 
