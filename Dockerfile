@@ -22,8 +22,8 @@ RUN curl -Lks https://www.atlassian.com/software/jira/downloads/binary/atlassian
 RUN mkdir -p /opt/jira && \
     mkdir -p /opt/jira-home
 
-RUN tar -zxf /root/jira.tar.gz --strip=1 -C /opt/jira && \
-    tar -zxf /root/mysql-connector-java.tar.gz --strip=1 -C /opt/jira/lib --wildcards --no-anchored 'mysql-connector-*-bin.jar'
+RUN tar zxf /root/jira.tar.gz --strip=1 -C /opt/jira
+RUN tar -zxf /root/mysql-connector-java.tar.gz --strip=1 -C /opt/jira/lib --wildcards --no-anchored 'mysql-connector-*-bin.jar'
 
 RUN echo "jira.home = /opt/jira-home" > /opt/jira/atlassian-jira/WEB-INF/classes/jira-application.properties && \
     export JIRA_HOME=/opt/jira-home
