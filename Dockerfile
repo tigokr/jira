@@ -16,8 +16,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install oracle-java8-installer curl l
 # Install JIRA
 
 RUN /usr/sbin/useradd --create-home --home-dir /usr/local/jira --shell /bin/bash jira
-RUN curl -Lks https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-software-7.0.5-jira-7.0.5-x64.bin -o /root/jira.tar.gz && \
-    curl -Lks http://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.38.tar.gz -o /root/mysql-connector-java.tar.gz
+RUN curl -Lks https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-software-7.0.5-jira-7.0.5-x64.bin -o /root/jira.tar.gz
+RUN curl -Lks http://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.38.tar.gz -o /root/mysql-connector-java.tar.gz
 
 RUN mkdir -p /opt/jira && \
     mkdir -p /opt/jira-home
