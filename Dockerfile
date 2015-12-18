@@ -11,7 +11,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -q -y software-properties-com
 RUN DEBIAN_FRONTEND=noninteractive apt-add-repository ppa:webupd8team/java -y
 RUN apt-get update
 RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
-RUN DEBIAN_FRONTEND=noninteractive apt-get install oracle-java8-installer curl libmysql-java mysq-client -y
+RUN DEBIAN_FRONTEND=noninteractive apt-get install oracle-java8-installer curl libmysql-java mysql-client -y
 
 # Install JIRA
 
