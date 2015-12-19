@@ -1,0 +1,4 @@
+app.jiraHome=/opt/jira-home
+existingInstallationDir=/opt/jira
+sys.languageId=en
+sys.installationDir=/opt/jira
